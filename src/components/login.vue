@@ -11,9 +11,7 @@
             Your API key is your property, please keep it safe.
           </li>
           <li>
-            To authenticate with OpenAI, we will send your API key to our server for processing but it will never be
-            stored there. Don't believe it? Check the <a
-            href="https://github.com/jw-12138/davinci-web/blob/main/back-end/main.cjs" target="_blank">source code</a>.
+            To authenticate with OpenAI, we will send your API key to our server for processing but it will never be stored there.
           </li>
           <li>
             Make sure this device is trusted, we will store your API key in this browser. If you're using a public
@@ -29,11 +27,11 @@
       </div>
 
     </div>
-    <div v-show="loginType === 'password'">
+    <!-- <div v-show="loginType === 'password'">
       <button class="sso" @click="goToSSO">
         <span>Sign in</span>
       </button>
-    </div>
+    </div> -->
     <div class="password" v-show="loginType === 'key'">
       <input type="password" v-model="password" autofocus @keydown="listenForEnter" @focus="passwordFocus = true"
              @blur="passwordFocus = false" placeholder="API key" enterkeyhint="go">
@@ -42,7 +40,7 @@
     <div style="font-size: 14px;">
       <br>
       <p v-show="loginType === 'password'">
-        Or if you have OpenAI API key, you can
+        <!-- Or if you have OpenAI API key, you can -->
         <button class="plain" @click="loginType = 'key'">Sign In with API Key</button>
       </p>
       <p v-show="loginType === 'key'">
@@ -78,7 +76,8 @@ export default {
   },
   methods: {
     goToSSO() {
-      location.href = this.url
+      // location.href = this.url
+      alert("暂不支持")
     },
     listenForEnter(e) {
       if (e.key === 'Enter' && this.password !== '' && this.passwordFocus) {
@@ -96,7 +95,8 @@ export default {
       this.trying = true
 
       axios({
-        url: 'https://api.openai.com/v1/moderations',
+        // use gpt proxy url
+        url: 'https://gptapi.pages.dev/api/v1/moderations',
         headers: {
           'Authorization': 'Bearer ' + key
         },

@@ -6,13 +6,13 @@
     }"
   >
     <div class="page-title">
-      <h1>🤖 DaVinci GPT-3</h1>
+      <h1>🤖ASST-智能助手</h1>
     </div>
     <div v-show="!isLogin && !checkingLogin">
       <div style="line-height: 1.9">
         <p>
-          👏 Introducing DaVinci, your virtual assistant for tasks,
-          questions and conversation. Open Sourced on <a href="https://github.com/jw-12138/davinci-web" target="_blank">GitHub</a>.
+          👏 Introducing ASST, your virtual assistant for tasks,
+          questions and conversation.
         </p>
       </div>
     </div>
@@ -75,7 +75,7 @@
           </table>
         </div>
 
-        <p>
+        <!-- <p>
           👻 About this project:
         </p>
         <ul>
@@ -88,7 +88,7 @@
           <li>
             © 2023 | <a href="https://jw1.dev" target="_blank">jw1.dev</a> | Code with ❤️
           </li>
-        </ul>
+        </ul> -->
       </div>
       <div class="message-list" v-show="messages.length && isLogin && !checkingLogin">
         <div
